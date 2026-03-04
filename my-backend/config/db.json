@@ -1,0 +1,83 @@
+
+
+
+
+
+
+
+
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Mahantayya",
+      "email": "mahan@example.com",
+      "role": "farmer",
+      "location": "Bijapur"
+    },
+    {
+      "id": 2,
+      "name": "Vendor 1",
+      "email": "vendor1@example.com",
+      "role": "vendor",
+      "location": "Bagalkot"
+    },
+    {
+      "id": 3,
+      "name": "Admin",
+      "email": "admin@example.com",
+      "role": "admin",
+      "location": "Bangalore"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Tractor",
+      "description": "Used for plowing fields",
+      "price": 150000,
+      "sellerId": 2,
+      "verified": true
+    },
+    {
+      "id": 2,
+      "name": "Fertilizer",
+      "description": "Organic fertilizer for crops",
+      "price": 500,
+      "sellerId": 2,
+      "verified": true
+    },
+    {
+      "id": 3,
+      "name": "Seeds",
+      "description": "High-yield wheat seeds",
+      "price": 120,
+      "sellerId": 2,
+      "verified": false
+    }
+  ],
+  "mandiPrices": [
+    {
+      "id": 1,
+      "cropName": "Wheat",
+      "pricePerKg": 25,
+      "mandi": "Bijapur",
+      "date": "2025-10-11T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "cropName": "Rice",
+      "pricePerKg": 40,
+      "mandi": "Bagalkot",
+      "date": "2025-10-11T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "cropName": "Maize",
+      "pricePerKg": 30,
+      "mandi": "Bijapur",
+      "date": "2025-10-11T00:00:00.000Z"
+    }
+  ]
+}
+
