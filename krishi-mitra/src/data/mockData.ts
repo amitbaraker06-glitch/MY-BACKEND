@@ -1,0 +1,129 @@
+import type { 
+  FarmField, SoilData, WeatherData, CropRecommendation 
+} from './types'
+
+export const mockFarmFields: FarmField[] = [
+  {
+    id: 'field-1',
+    name: 'Field 01',
+    location: 'Maharashtra, India',
+    size: 2,
+    soilType: 'Loamy',
+    currentCrop: 'Paddy',
+    sowingDate: '2024-06-15',
+    growthStage: 'Vegetative',
+    soilHealth: 'Good',
+    moisture: 64,
+  },
+  {
+    id: 'field-2',
+    name: 'Field 02',
+    location: 'Maharashtra, India',
+    size: 1.5,
+    soilType: 'Clay Loam',
+    currentCrop: 'Wheat',
+    sowingDate: '2024-11-01',
+    growthStage: 'Tillering',
+    soilHealth: 'Fair',
+    moisture: 45,
+  },
+]
+
+export const mockSoilData: SoilData = {
+  moisture: 62,
+  ph: 6.7,
+  nitrogen: 45,
+  phosphorus: 32,
+  potassium: 28,
+  healthScore: 82,
+}
+
+export const mockWeatherData: WeatherData = {
+  temperature: 28,
+  humidity: 72,
+  rainfall: 12,
+  windSpeed: 8,
+  condition: 'Partly Cloudy',
+  sunrise: '6:15 AM',
+  sunset: '6:45 PM',
+  forecast: [
+    { day: 'Today', date: 'Aug 20', high: 30, low: 24, condition: 'Partly Cloudy', rainfall: 12, humidity: 72 },
+    { day: 'Tomorrow', date: 'Aug 21', high: 31, low: 25, condition: 'Light Rain', rainfall: 25, humidity: 78 },
+    { day: 'Aug 22', date: 'Aug 22', high: 29, low: 24, condition: 'Moderate Rain', rainfall: 45, humidity: 85 },
+    { day: 'Aug 23', date: 'Aug 23', high: 28, low: 23, condition: 'Heavy Rain', rainfall: 65, humidity: 90 },
+    { day: 'Aug 24', date: 'Aug 24', high: 30, low: 24, condition: 'Cloudy', rainfall: 5, humidity: 70 },
+    { day: 'Aug 25', date: 'Aug 25', high: 32, low: 25, condition: 'Sunny', rainfall: 0, humidity: 60 },
+    { day: 'Aug 26', date: 'Aug 26', high: 33, low: 26, condition: 'Sunny', rainfall: 0, humidity: 55 },
+  ],
+  alerts: [
+    { type: 'heavy-rain', severity: 'medium', message: 'Heavy rainfall expected on Aug 23. Ensure proper drainage.' },
+  ],
+}
+
+export const mockCropRecommendations: CropRecommendation[] = [
+  {
+    id: 'paddy',
+    name: 'Paddy',
+    compatibility: 94,
+    suitability: {
+      ph: 'suitable',
+      nitrogen: 'suitable',
+      phosphorus: 'suitable',
+      potassium: 'moderate',
+      moisture: 'suitable',
+      weather: 'suitable',
+    },
+  },
+  {
+    id: 'maize',
+    name: 'Maize',
+    compatibility: 87,
+    suitability: {
+      ph: 'suitable',
+      nitrogen: 'moderate',
+      phosphorus: 'suitable',
+      potassium: 'suitable',
+      moisture: 'moderate',
+      weather: 'suitable',
+    },
+  },
+  {
+    id: 'groundnut',
+    name: 'Groundnut',
+    compatibility: 81,
+    suitability: {
+      ph: 'moderate',
+      nitrogen: 'suitable',
+      phosphorus: 'suitable',
+      potassium: 'suitable',
+      moisture: 'moderate',
+      weather: 'moderate',
+    },
+  },
+  {
+    id: 'wheat',
+    name: 'Wheat',
+    compatibility: 76,
+    suitability: {
+      ph: 'suitable',
+      nitrogen: 'moderate',
+      phosphorus: 'moderate',
+      potassium: 'moderate',
+      moisture: 'moderate',
+      weather: 'moderate',
+    },
+  },
+  {
+    id: 'sugarcane',
+    name: 'Sugarcane',
+    compatibility: 72,
+    suitability: {
+      ph: 'moderate',
+      nitrogen: 'moderate',
+      phosphorus: 'moderate',
+      potassium: 'suitable',
+      moisture: 'moderate',
+      weather: 'suitable',
+    },
+  },
+]

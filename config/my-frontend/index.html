@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrushiMitra 🌾</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 🌾 Welcome Page -->
+  <div id="welcome-page" class="page active">
+    <h1>🌱 Welcome to KrushiMitra</h1>
+    <p>Empowering Farmers through Technology</p>
+    <button onclick="goToAuthPage()">Get Started</button>
+  </div>
+
+  <!-- 🔐 Authentication Page -->
+  <div id="auth-page" class="page">
+    <h2>Login or Signup</h2>
+    <div class="auth-container">
+
+      <!-- Login Section -->
+      <div class="login-section">
+        <h3>Login</h3>
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
+        <button onclick="loginUser()">Login</button>
+      </div>
+
+      <hr>
+
+      <!-- Signup Section -->
+      <div class="signup-section">
+        <h3>Signup</h3>
+        <input type="email" id="signup-email" placeholder="Enter your email">
+        <input type="password" id="signup-password" placeholder="Create a password">
+        <button onclick="signupUser()">Signup</button>
+      </div>
+
+      <div class="social-login">
+        <button onclick="googleLogin()">🔗 Google Login</button>
+        <button onclick="appleLogin()">🍎 Apple Login</button>
+      </div>
+
+      <button onclick="goBackToWelcome()">⬅️ Back</button>
+    </div>
+  </div>
+
+  <!-- 🎭 Role Selection Page -->
+  <div id="role-selection-page" class="page">
+    <h2>Select Your Role</h2>
+    <button onclick="selectRole('farmer')">👨‍🌾 Farmer</button>
+    <button onclick="selectRole('service-provider')">🔧 Service Provider</button>
+    <button onclick="selectRole('admin')">🧑‍💼 Admin</button>
+    <button onclick="goBackToWelcome()">⬅️ Logout</button>
+  </div>
+
+  <!-- 🌾 Farmer Dashboard -->
+  <div id="farmer-dashboard" class="page">
+    <h2>Farmer Dashboard</h2>
+    <button data-feature="mandi">📈 Mandi Prices</button>
+    <button data-feature="ai-advisor">🤖 AI Crop Advisor</button>
+    <button data-feature="weather">🌦️ Weather Updates</button>
+    <button data-feature="market">🛒 Marketplace</button>
+    <button onclick="goBackToRoleSelection()">⬅️ Back</button>
+  </div>
+
+  <!-- 🧰 Service Provider Dashboard -->
+  <div id="service-dashboard" class="page">
+    <h2>Service Provider Dashboard</h2>
+    <button data-feature="bookings">📅 Bookings</button>
+    <button data-feature="equipment">🧰 Equipment</button>
+    <button data-feature="earnings">💰 Earnings</button>
+    <button data-feature="support">💬 Support</button>
+    <button onclick="goBackToRoleSelection()">⬅️ Back</button>
+  </div>
+
+  <!-- 🧾 Admin Dashboard -->
+  <div id="admin-dashboard" class="page">
+    <h2>Admin Dashboard</h2>
+    <button data-feature="verify">🧾 Verify Listings</button>
+    <button data-feature="users">👥 Manage Users</button>
+    <button data-feature="analytics">📊 Analytics</button>
+    <button data-feature="announcements">📢 Announcements</button>
+    <button onclick="goBackToRoleSelection()">⬅️ Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
