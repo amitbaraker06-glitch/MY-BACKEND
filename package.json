@@ -1,24 +1,17 @@
 {
-  "name": "krushi-mitra-backend",
+  "name": "krishi-mitra-backend",
   "version": "1.0.0",
-  "description": "Backend for Krushi Mitra platform",
+  "description": "Krishi Mitra backend API",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": [
-    "backend",
-    "krushi-mitra",
-    "express",
-    "mongodb"
-  ],
-  "author": "Mahantayya Sarangamath",
+  "keywords": [],
+  "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.12.2",
-    "bcrypt": "^5.1.0",
-    "bcryptjs": "^3.0.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.21.2",
@@ -26,7 +19,9 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.8.7",
     "morgan": "^1.10.0",
-    "socket.io": "^4.7.2"
+    "lucide-react": "^1.33.0",
+    "react-chartjs-2": "^5.3.1",
+    "chart.js": "^4.5.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

@@ -1,6 +1,3 @@
-// --------------------
-// Entry Point - Root app.js
-// This file must exist at the project root for "npm start" to work
-// package.json: "main": "app.js", "start": "node app.js"
-// --------------------
+// Entry point - app.js
+// Keep this minimal so "npm start" works as expected
 require('./config/app');

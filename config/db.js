@@ -6,7 +6,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 /**
  * Connect to MongoDB with retry logic.
- * Does NOT call process.exit() — caller handles errors gracefully.
+ * Throws on final failure so caller can handle it.
  */
 const connectDB = async (retries = 3, delay = 5000) => {
   const mongoUri = process.env.MONGO_URI;
@@ -16,7 +16,7 @@ const connectDB = async (retries = 3, delay = 5000) => {
     throw err;
   }
 
-  // Pre-validate DNS for SRV URIs
+  // Pre-validate DNS for SRV URIs (best-effort)
   if (mongoUri.startsWith('mongodb+srv://')) {
     try {
       const hostname = mongoUri.split('@')[1].split('/')[0];
@@ -37,7 +37,6 @@ const connectDB = async (retries = 3, delay = 5000) => {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       await mongoose.connect(mongoUri, {
-        // Mongoose 7+ connection options
         serverSelectionTimeoutMS: 15000,
         socketTimeoutMS: 45000,
         connectTimeoutMS: 15000,
@@ -52,8 +51,8 @@ const connectDB = async (retries = 3, delay = 5000) => {
         console.log(`   Retrying in ${delay / 1000} seconds...`);
         await new Promise(r => setTimeout(r, delay));
       } else {
-        console.error('❌ All MongoDB connection attempts failed. Server will continue without database.');
-        throw err; // Let caller decide whether to handle or crash
+        console.error('❌ All MongoDB connection attempts failed.');
+        throw err; // Let caller decide
       }
     }
   }
